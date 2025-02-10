@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap');
+
+body {
+    background: linear-gradient(to right, #fff, #F8F8F8, #F5F5F5, #E0E0E0, #fff0ff);
+    color: black;
+    height: 100vh;
+    box-sizing: border-box;
+    animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0; /* Inicialmente invisible */
+        transform: translateY(-50px); /* Desplazado hacia arriba */
+    }
+    100% {
+        opacity: 1; /* Totalmente visible */
+        transform: translateY(0); /* Posición final */
+    }
+}
+
+strong {
+    color: #f033ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4%;
+}
+
+.text-section {
+    width: 50%;
+    padding-right: 2%;
+    margin-top: -10px; /* Ajusta hacia arriba todo el bloque */
+    transform: translateY(-10%); /* Mueve todo el contenido hacia arriba */
+    animation: slideDown 1s ease-out; /* Suaviza la transición */
+    opacity: 0; /* Garantiza que sea invisible antes de la animación */
+    animation-fill-mode: forwards; /* Mantiene la posición final después de la animación */
+    position: relative; /* Habilita el desplazamiento */
+    top: -40px; /* Mueve hacia arriba todo el bloque */
+
+
+}
+
+.profile-image {
+    width: 35%;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slide 20s infinite ease-in-out;
+}
+
+.image-slider img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    transition: transform 2s ease-in-out;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    90% { transform: translateX(-300%); }
+    100% { transform: translateX(0); }
+}
+
+.cabezado {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    color: #ff1493;
+    margin-bottom: 16px;
+}
+
+.parrafo {
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.cabezado, .parrafo {
+    animation: slideDown 1.2s ease-out; /* Añade un ligero retraso para mayor elegancia */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row; /* Coloca los botones uno al lado del otro */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;
+    gap: 12px; /* Espacio entre los botones */
+}
+
+.btn-instagram, .btn-tiktok {
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-instagram {
+    background-color: #f8b4d9;
+    color: white;
+}
+
+.btn-instagram:hover {
+    background-color: #d28aa8;
+}
+
+.btn-tiktok {
+    background-color: #ffcccc;
+    color: white;
+}
+
+.btn-tiktok:hover {
+    background-color: #cc9999;
+}
+
+.btn-instagram:hover, .btn-tiktok:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Añade una sombra para resaltar */
+    opacity: 0.9; /* Ajusta la opacidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+.horizontal-stretch {
+    width: 120%; /* Incrementa el ancho en un 20% */
+    height: auto; /* Ajusta la altura automáticamente */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    transition: width 0.5s ease-in-out; /* Transición suave al ajustar */
+}
+
+/* Opcional: Zoom cuando se pasa el cursor */
+.horizontal-stretch:hover {
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+.img-hover {
+    transition: transform 0.6s ease-in-out; /* Transición suave */
+}
+
+.img-hover:hover {
+    transform: scale(1.1); /* Aumenta el tamaño en un 20% */
+    cursor: pointer; /* Cambia el cursor a 'pointer' para indicar interactividad */
+}
+
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #ff69b4; /* Color llamativo */
+    text-transform: capitalize; /* Opcional: Capitaliza el texto */
+}
+
+/* Párrafos */
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #333; /* Color oscuro para legibilidad */
+    line-height: 1.6; /* Mejora la separación del texto */
+}
+
+/* Botones */
+button, .boton {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #fff; /* Texto blanco */
+    background-color: #ff69b4; /* Fondo rosa llamativo */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .boton:hover {
+    background-color: #ff1493; /* Oscurece el fondo al pasar el cursor */
+}
+
+.btn-instagram i, .btn-tiktok i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-section {
+        width: 90%;
+        padding-right: 0;
+        margin-top: 40px; /* Desplaza el bloque hacia abajo */
+        transform: translateY(0); /* Asegura que no haya movimiento hacia arriba */
+    }
+
+    .cabezado {
+        margin-top: 10px; /* Añade espacio adicional encima del título */
+        font-size: 36px; /* Ajusta el tamaño del texto para móviles */
+    }
+
+    .profile-image {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .button-container {
+        flex-direction: column; /* Apila los botones en móviles */
+        gap: 10px;
+    }
+}
