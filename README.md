@@ -1,4 +1,4 @@
-Pagina web que simula ser un portafolio de una persona influencer en las redes sociales
+Pagina web que simula ser un portafolio de una persona influencer de redes sociales
 
 Funcionalidades:
 
