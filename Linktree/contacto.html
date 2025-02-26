@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jhen Núñez</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="contacto.js" defer></script>
+  <style>
+    .mi-popup .swal2-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #ff69b4; /* rosa llamativo */
+    }
+    .mi-popup .swal2-html-container {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body class="contact-page">
+  <main class="container contact-container">
+    <h1 class="contact-title">Contacto</h1>
+    <form id="contact-form" class="contact-form">
+      <label for="nombre" class="contact-label">Nombre:</label>
+      <input type="text" id="nombre" name="from_name" class="contact-input" required>
+      
+      <label for="correo" class="contact-label">Correo Electrónico:</label>
+      <input type="email" id="correo" name="email_id" class="contact-input" required>
+      
+      <label for="mensaje" class="contact-label">Mensaje:</label>
+      <textarea id="mensaje" name="message" class="contact-textarea" rows="5" required></textarea>
+      
+      <button type="submit" class="contact-button">Enviar</button>
+    </form>
+  </main>
+</body>
+</html>
