@@ -56,7 +56,25 @@ strong {
 
 
 }
+.btn-contacto {
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #87CEFA; /* Azul claro */
+    color: white;
+    transition: background-color 0.3s ease;
+}
 
+.btn-contacto:hover {
+    background-color: #4682B4; /* Azul más oscuro */
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 .profile-image {
     width: 35%;
     height: auto;
@@ -70,7 +88,7 @@ strong {
     width: 100%;
     height: 100%;
     display: flex;
-    animation: slide 20s infinite ease-in-out;
+    animation: slide 25s infinite ease-in-out;
 }
 
 .image-slider img {
@@ -81,15 +99,21 @@ strong {
 }
 
 @keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }         /* Primera imagen */
+    10% { transform: translateX(0); }
+    20% { transform: translateX(-100%); }   /* Segunda imagen */
+    30% { transform: translateX(-100%); }
+    40% { transform: translateX(-200%); }   /* Tercera imagen */
     50% { transform: translateX(-200%); }
-    70% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    90% { transform: translateX(-300%); }
-    100% { transform: translateX(0); }
+    60% { transform: translateX(-300%); }   /* Cuarta imagen */
+    70% { transform: translateX(-300%); }
+    80% { transform: translateX(-400%); }   /* Quinta imagen */
+    90% { transform: translateX(-400%); }
+    100% { transform: translateX(0); }      /* Regresa a la primera imagen */
+}
+
+.profile-image:active {
+    transform: none !important;
 }
 
 .cabezado {
@@ -102,6 +126,11 @@ strong {
 .parrafo {
     font-size: 20px;
     margin-bottom: 24px;
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+
+.parrafo:hover {
+    transform: scale(1.05); /* Acercamiento al pasar el cursor */
 }
 
 .cabezado, .parrafo {
@@ -160,19 +189,43 @@ strong {
 }
 
 /* Opcional: Zoom cuando se pasa el cursor */
-.horizontal-stretch:hover {
-    transform: scale(1.1); /* Efecto de zoom */
-}
+
 
 .img-hover {
     transition: transform 0.6s ease-in-out; /* Transición suave */
 }
 
 .img-hover:hover {
-    transform: scale(1.1); /* Aumenta el tamaño en un 20% */
-    cursor: pointer; /* Cambia el cursor a 'pointer' para indicar interactividad */
+    cursor: pointer;
 }
 
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-family: sans-serif;
+    color: #ffffff !important;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+}
+
+main {
+    flex-grow: 0; /* Hace que el contenido empuje el footer hacia abajo */
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
@@ -209,6 +262,97 @@ button:hover, .boton:hover {
 .btn-instagram i, .btn-tiktok i {
     margin-right: 8px; /* Espacio entre el icono y el texto */
 }
+.footer p {
+    color: #ffffff !important;
+}
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1700px; /* Aumenta el ancho */
+        width: 100%; /* Permite que se expanda más */
+        padding: 30px; /* Más espacio interno */
+        min-height: 85vh; /* Más altura */
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Mejora la sombra */
+    }
+
+    .text-section {
+        width: 50%;
+        padding: 20px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Mantener efecto visual */
+    }
+
+    .profile-image {
+        width: 35%;
+        border-radius: 20px; /* Igual que en móvil */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .profile-image:hover {
+        transform: scale(1.05);
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column; /* Mantener diseño de botones de móvil */
+        gap: 12px;
+        margin-top: 15px;
+        padding: 10px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .cabezado {
+        font-size: 36px;
+    }
+
+    .parrafo {
+        font-size: 18px;
+        line-height: 1.8;
+        padding: 10px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background: linear-gradient(to bottom, #e6e6fa, #d8bfd8, #dda0dd, #ee82ee)!important;
+        color: black;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        animation: fadeIn 2s ease-in-out;
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        position: absolute;
+        bottom: 30px;
+        display:block;
+
+    }
+    .footer p {
+        color: #ee82ee !important;
+    }
+
+    .mobile-footer {
+        display: none;
+    }
+   
+}
 
 @media (max-width: 768px) {
     .container {
@@ -219,8 +363,11 @@ button:hover, .boton:hover {
         padding: 20px;
         background: white;
         border-radius: 20px;
-
         overflow: hidden;
+    }
+
+    .footer {
+      display:none;
     }
 
     .text-section {
@@ -238,6 +385,8 @@ button:hover, .boton:hover {
         border-radius: 20px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease-in-out;
+        position: relative; /* Nuevo */
+        top: -40px; /* En lugar de transform */
     }
 
     .profile-image:hover {
@@ -256,7 +405,6 @@ button:hover, .boton:hover {
 
     .cabezado {
         font-size: 30px;
-
     }
 
     .parrafo {
@@ -279,5 +427,184 @@ button:hover, .boton:hover {
         align-items: center;
         justify-content: center;
         animation: fadeIn 2s ease-in-out;
+    }
+
+    .mobile-footer {
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        color: #ee82ee;
+        font-size: 14px;
+        margin-top: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: block;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+body.contact-page {
+    background: linear-gradient(to right, #fff, #F8F8F8, #F5F5F5, #E0E0E0, #fff0ff);
+    color: black;
+    height: 100vh;
+    box-sizing: border-box;
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+h1.contact-title {
+    font-family: 'Playfair Display', serif;
+    color: #ff69b4;
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+}
+
+.container.contact-container {
+    width: 90%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+label.contact-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+#contact-form {
+    transform: translateY(-150px); /* Ajusta este valor según necesites */
+}
+
+/* Asegura que el título no se mueva */
+h1.contact-title {
+    transform: translateY(40px); /* Compensa el movimiento del formulario */
+}
+
+input.contact-input, textarea.contact-textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+input.contact-input:focus, textarea.contact-textarea:focus {
+    outline: none;
+    border-color: #ff1493;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+button.contact-button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: white;
+    background-color: #ff69b4;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 500px;
+}
+
+button.contact-button:hover {
+    background-color: #ff1493;
+}
+
+@media (min-width: 1024px) {
+    .container.contact-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes para el contenedor principal */
+    .container.contact-container {
+        padding: 20px 15px; /* Reducir padding interno */
+        margin: 20px auto; /* Centrar mejor */
+        min-height: auto;
+    }
+
+    /* Título más compacto y visible */
+    h1.contact-title {
+        font-size: 1.8rem; /* Tamaño más pequeño para móviles */
+        margin: 15px 0 20px 0; /* Espaciado ajustado */
+        line-height: 1.2;
+    }
+
+    /* Campos de texto más pequeños */
+    .contact-input, .contact-textarea {
+        max-width: 100%; /* Ocupar ancho completo */
+        padding: 10px; /* Padding reducido */
+        font-size: 16px; /* Tamaño de fuente más pequeño */
+        margin: 8px 0; /* Espaciado vertical reducido */
+    }
+
+    /* Botón de enviar más compacto */
+    button.contact-button {
+        padding: 12px;
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    /* Reducir espacio entre elementos del formulario */
+    .contact-form {
+        gap: 12px !important;
+        margin-top: 0;
+    }
+
+    /* Ajustar altura del textarea */
+    .contact-textarea {
+        min-height: 120px; /* Menor altura por defecto */
+        min-height: 120px; /* Altura mínima reducida */
+    }
+
+    #contact-form, 
+    h1.contact-title {
+        transform: none !important; /* Elimina cualquier transformación */
+        margin: 0 !important; /* Por si hay márgenes conflictivos */
+    }
+    
+    /* Asegurar visibilidad del título */
+    h1.contact-title {
+        font-size: 2rem !important;
+        margin-bottom: 20px !important;
+        display: block !important;
+    }
+    
+    /* Restaurar tamaño original de campos */
+    .contact-input, 
+    .contact-textarea {
+        max-width: 100% !important;
+        padding: 12px !important;
     }
 }
